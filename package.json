@@ -1,0 +1,38 @@
+{
+  "name": "unittest",
+  "version": "1.0.0",
+  "description": "Test for course UTEQ unitTest",
+  "main": "server.js",
+  "engines": {
+    "node": "22.x"
+  },
+  "scripts": {
+    "start": "node server.js",
+    "test": "jest --runInBand",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "prepare": "husky"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^5.2.1"
+  },
+  "devDependencies": {
+    "husky": "^9.1.7",
+    "jest": "^29.7.0",
+    "lint-staged": "^16.4.0",
+    "prettier": "^3.9.9",
+    "supertest": "^7.3.0"
+  },
+  "jest": {
+    "testEnvironment": "node",
+    "testMatch": [
+      "**/testEndpoints.js",
+      "**/tests/**/*.test.js"
+    ]
+  },
+  "lint-staged": {
+    "*.{js,json,md}": "prettier --write"
+  }
+}
