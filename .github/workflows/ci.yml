@@ -16,4 +16,11 @@ jobs:
           node-version: 22
           cache: npm
       - run: npm ci
-      - run: npm test -- --runInBand
+      - name: List test files
+        run: npx jest --listTests
+      - name: Run all tests (verbose)
+        run: npm test -- --runInBand --verbose
+      - name: Run testEndpoints.js only
+        run: npx jest testEndpoints.js --runInBand --verbose
+      - name: Run tests/users.test.js only
+        run: npx jest tests/users.test.js --runInBand --verbose
